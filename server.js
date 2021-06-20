@@ -1,19 +1,23 @@
 const express = require('express');
+const cors = require('cors')
 
 const app = express();
+
+const testimonialsRoutes = require('./routes/testimonials.routes');
+const seatsRoutes = require('./routes/seats.routes');
+const concertsRoutes = require('./routes/concerts.routes');
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-const db = [
-  { id: 1, author: 'John Doe', text: 'This company is worth every coin!' },
-  { id: 2, author: 'Amanda Doe', text: 'They really know how to make you happy.' },
-];
+app.use(cors());
+app.use('/api', testimonialsRoutes);
+app.use('/api', seatsRoutes);
+app.use('/api', concertsRoutes);
 
-app.get('/testimonials', (req, res) => {
-  res.show('testimonials.html');
-});
-
+app.use((req, res) => {
+  res.status(404).send('404 page not found');
+})
 
 app.listen(8000, () => {
   console.log('Server is running on port: 8000');
