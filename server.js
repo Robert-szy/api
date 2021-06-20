@@ -1,5 +1,6 @@
 const express = require('express');
-const cors = require('cors')
+const cors = require('cors');
+const path = require('path');
 
 const app = express();
 
@@ -15,10 +16,17 @@ app.use('/api', testimonialsRoutes);
 app.use('/api', seatsRoutes);
 app.use('/api', concertsRoutes);
 
+app.use(express.static(path.join(__dirname, '/client//newwavefest/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/client/newwavefest/build/index.html'));
+});
+
+
 app.use((req, res) => {
   res.status(404).json('404 page not found');
 })
 
-app.listen(8000, () => {
+app.listen(process.env.PORT || 8000, () => {
   console.log('Server is running on port: 8000');
 });
