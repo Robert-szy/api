@@ -18,15 +18,22 @@ router.route('/seats/:id').get((req, res) => {
 });
 
 router.route('/seats').post((req, res) => {
-  const { author, text } = req.body;
-  
+  const { day, seat, client, email } = req.body;
+
+  if (seats.some(x =>x.day == req.params.day) && seats.some(x =>x.seat == req.params.seat)) {
+    res.json('Seat already taken')
+    res.sendStatus(200);
+  } else {
   const testObj = {};
-  testObj.id = parseInt(Math.random()*10000);;
-  testObj.author = author + testObj.id;
-  testObj.text = text;
+  testObj.id = parseInt(Math.random()*10000);
+  testObj.day = day;
+  testObj.seat = seat;
+  testObj.client = client;
+  testObj.email = email;
   
   seats.push(testObj);
   res.sendStatus(200);
+  }
 });
 
 router.route('/seats/:idtest').put((req, res) => {
