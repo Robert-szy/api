@@ -11,6 +11,6 @@
     "express": "4.17.1"
   },
   "scripts": {
-    "build": "cd client/newwavefest/ && yarn install && yarn build"
+    "build": "cd client && yarn install && yarn build"
   }
 }
