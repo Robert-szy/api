@@ -16,7 +16,7 @@ app.use('/api', seatsRoutes);
 app.use('/api', concertsRoutes);
 
 app.use((req, res) => {
-  res.status(404).send('404 page not found');
+  res.status(404).json('404 page not found');
 })
 
 app.listen(8000, () => {
