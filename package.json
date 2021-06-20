@@ -5,5 +5,11 @@
   },
   "scripts": {
     "build": "cd client && yarn install && yarn build"
-  }
+  },
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Robert-szy/api.git",
+  "author": "Robert Szyszka <robert.szyszka@outlook.com>",
+  "license": "MIT"
 }
