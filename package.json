@@ -1,14 +1,13 @@
 {
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "4.17.1"
-  },
-  "scripts": {
-  },
   "name": "api",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/Robert-szy/api.git",
   "author": "Robert Szyszka <robert.szyszka@outlook.com>",
-  "license": "MIT"
+  "license": "MIT",
+  
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "4.17.1"
+  }
 }
