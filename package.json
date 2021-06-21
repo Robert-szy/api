@@ -5,7 +5,6 @@
   "license": "MIT",
   "scripts": {
     "start": "npx nodemon server.js",
-    "build": "cd client && yarn install && yarn build",
     "test": "NODE_ENV=production mocha \"./{,!(node_modules|client)/**/}*.test.js\"",
     "test:watch": "onchange \"./**/*.js\" -i -k -- yarn test"
   },
