@@ -16,7 +16,7 @@ app.use('/api', testimonialsRoutes);
 app.use('/api', seatsRoutes);
 app.use('/api', concertsRoutes);
 
-app.use(express.static(path.join(__dirname, '/client//newwavefest/build')));
+app.use(express.static(path.join(__dirname, '/client/newwavefest/build')));
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/client/newwavefest/build/index.html'));
